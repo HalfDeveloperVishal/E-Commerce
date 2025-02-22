@@ -242,8 +242,27 @@ const Navbar = () => {
                 onChange={handleInputChange}
                 required
               />
+              <div className="terms-container">
+                <input
+                  type="checkbox"
+                  id="termsAccepted"
+                  name="termsAccepted"
+                  checked={formData.termsAccepted}
+                  onChange={handleInputChange}
+                  required
+                />
+                <label htmlFor="termsAccepted">
+                  I accept the Terms & Conditions
+                </label>
+              </div>
+
               <button type="submit">Register</button>
-              <p>Already have an account? <a href="#" onClick={openLoginForm}>Sign In</a></p>
+              <p>
+                Already have an account?{" "}
+                <a href="#" onClick={openLoginForm}>
+                  Sign In
+                </a>
+              </p>
             </form>
           </div>
         </div>
@@ -275,7 +294,12 @@ const Navbar = () => {
               />
               <button type="submit">Login</button>
               {errorMessage && <p className="error-message">{errorMessage}</p>}
-              <p>Create New Account ?  <a href="#" onClick={openSignupForm}>Sign up</a></p>
+              <p>
+                Create New Account ?{" "}
+                <a href="#" onClick={openSignupForm}>
+                  Sign up
+                </a>
+              </p>
             </form>
           </div>
         </div>
