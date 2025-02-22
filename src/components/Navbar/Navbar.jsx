@@ -243,6 +243,7 @@ const Navbar = () => {
                 required
               />
               <button type="submit">Register</button>
+              <p>Already have an account? <a href="#" onClick={openLoginForm}>Sign In</a></p>
             </form>
           </div>
         </div>
@@ -274,6 +275,7 @@ const Navbar = () => {
               />
               <button type="submit">Login</button>
               {errorMessage && <p className="error-message">{errorMessage}</p>}
+              <p>Create New Account ?  <a href="#" onClick={openSignupForm}>Sign up</a></p>
             </form>
           </div>
         </div>

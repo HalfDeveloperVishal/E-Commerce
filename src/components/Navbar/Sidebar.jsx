@@ -160,6 +160,7 @@ function Sidebar() {
               <input type="password" name="password" placeholder="Password" value={loginData.password} onChange={handleLoginChange} required />
               <button type="submit">Login</button>
               {errorMessage && <p className="error-message">{errorMessage}</p>}
+              <p>Create New Account ?  <a href="#" onClick={openSignupForm}>Sign up</a></p>
             </form>
           </div>
         </div>
