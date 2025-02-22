@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { CartContext } from "../CartContext";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineDelete } from "react-icons/ai"; // React Icon for delete
@@ -8,17 +8,19 @@ const CartPage = () => {
   const { cart, decreaseQuantity, increaseQuantity, removeFromCart } = useContext(CartContext);
   const navigate = useNavigate();
 
-  // Function to handle decrease quantity
+  // Scroll to top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleDecreaseQuantity = (product) => {
     decreaseQuantity(product);
   };
 
-  // Function to handle increase quantity
   const handleIncreaseQuantity = (product) => {
     increaseQuantity(product);
   };
 
-  // Function to handle delete item
   const handleDelete = (product) => {
     removeFromCart(product);
   };
@@ -90,11 +92,11 @@ const CartPage = () => {
               <h3>Total Amount:</h3>
               <h3>{finalAmount.toFixed(2)} Rs</h3>
             </div>
-
           </div>
-            <button className="buy-now-button" >
-              Proceed to Checkout
-            </button>
+
+          <button className="buy-now-button">
+            Proceed to Checkout
+          </button>
         </>
       )}
     </div>

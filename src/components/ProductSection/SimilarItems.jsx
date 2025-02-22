@@ -70,6 +70,7 @@ const SimilarItems = () => {
       description: "It comes with 7.1 Surround Sound, DTS x 2.0, 50 mm Audio Drivers and 3.5 mm Jack",
       rating: 4,
       images: [ 
+        SimilarItem1,
         similardescription11, 
         similardescription12,
         similardescription13,
@@ -83,6 +84,7 @@ const SimilarItems = () => {
       description: "It is a Lightweight Gaming Over Ear Wired Headphones with Mic| 3.5MM Jack |50 MM Drivers ",
       rating: 4,
       images: [
+        SimilarItem2,
         similardescription21 ,
         similardescription22, 
         similardescription23,
@@ -96,6 +98,7 @@ const SimilarItems = () => {
       description: "It is a Gaming wired over ear Headphone, 7 Color RGB LED and Microphone",
       rating: 5,
       images: [
+        SimilarItem3,
         similardescription31, 
         similardescription32, 
         similardescription33,
@@ -109,6 +112,7 @@ const SimilarItems = () => {
       description: "It is a Multi-Platform Wired Esports On Ear Headset - RZ04-03240700-R3M1",
       rating: 4,
       images: [ 
+        SimilarItem4,
         similardescription41, 
         similardescription42,
         similardescription43,

@@ -73,7 +73,7 @@ const Products = () => {
       price: 1299,
       description: "Wireless Over-Ear headphones with AdaptiveHybrid Anc (upto 50dB)",
       rating: 4,
-      images: [description11, description12, description13], // Unique images
+      images: [Product1, description11, description12, description13], // Unique images
     },
     {
       id: 2,
@@ -82,7 +82,7 @@ const Products = () => {
       price: 699,
       description: "Bluetooth 5.3 Wireless Over Ear with 60H Backup",
       rating: 5,
-      images: [description21, description22, description23], // Unique images
+      images: [Product2, description21, description22, description23], // Unique images
     },
     {
       id: 3,
@@ -91,7 +91,7 @@ const Products = () => {
       price: 1499,
       description: "Comes with 15 HRS Battery, 40mm Drivers, Padded Ear Cushions",
       rating: 3,
-      images: [description31, description32,description33], // Unique images
+      images: [Product3, description31, description32,description33], // Unique images
     },
     {
       id: 4,
@@ -100,7 +100,7 @@ const Products = () => {
       price: 1299,
       description: "Bluetooth Wireless on Ear Headphones , Enx Tech , ASAP Charge, 25H Playtime",
       rating: 4,
-      images: [description41, description42, description43], // Unique images
+      images: [Product4, description41, description42, description43], // Unique images
     },
   ];
 
