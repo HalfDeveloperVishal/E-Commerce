@@ -1,0 +1,145 @@
+/* Main container */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #013d27;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  width: 100%;
+  height: 20px;
+}
+
+.left-section {
+  margin-left: 50px;
+  display: flex;
+}
+
+.contact-icon {
+  margin-right: 8px;
+}
+
+.right-section {
+  margin-right: 50px;
+}
+
+/* Common styling for all sections */
+.left-section,
+.middle-section,
+.right-section {
+  text-align: center;
+  font-size: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.middle-section {
+  display: flex;
+}
+
+.middle-section p {
+  margin-right: 5px;
+}
+
+.middle-section p:hover {
+  text-decoration: underline;
+}
+
+.shop-now {
+  margin-left: 5px;
+}
+
+.shop-now:hover {
+  text-decoration: underline;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between elements */
+}
+
+/* Styling for Language Dropdown */
+.language-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.selected-language {
+  margin-right: 5px;
+}
+
+.dropdown-icon {
+  font-size: 14px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.language-dropdown:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 17.9px;
+  left: 0;
+  background-color: #013d27;
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  list-style: none;
+  /* padding: 5px 0; */
+  width: 70px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+  padding: 3px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 10px;
+}
+
+.dropdown-menu li:hover {
+  text-decoration: underline;
+}
+
+/* Styling for Location */
+.location-section {
+  display: flex;
+  align-items: center;
+}
+
+.location-icon {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+
+.location-section:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .left-section {
+    display: none;
+  }
+
+  .contact-container {
+    justify-content: space-between;
+  }
+
+  .middle-section {
+    /* order: -1; */
+    margin-left: 10px;
+  }
+  .right-section {
+    margin-right: 12px;
+  }
+
+  .selected-language,
+  .dropdown-icon {
+    display: none;
+  }
+}

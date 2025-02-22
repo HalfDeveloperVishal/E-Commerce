@@ -1,0 +1,102 @@
+/* Container styling */
+.container {
+  width: 90%; /* Large width */
+  height: 250px; /* Large height */
+  padding:0 20px; /* Padding on left and right sides */
+  margin: 0 auto; /* Center the container */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space between content and image */
+  background-color: #FCF0E4; /* Background color for visibility */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 10px;
+}
+
+.Heropart{
+    padding-top: 10px;
+}
+
+/* Content styling */
+.content {
+  max-width: 50%;
+  margin-left: 40px;
+}
+
+/* Heading styling */
+.heading {
+  font-size: 2rem; /* Large font size */
+  margin-bottom: 20px; /* Space below the heading */
+  color: #013D29;
+}
+
+/* Button styling */
+.button {
+  padding: 10px 20px; /* Button padding */
+  font-size: 1rem; /* Button font size */
+  background-color: #013D29; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-left: 40px;
+}
+
+.button:hover {
+  background-color: #013D29; /* Darker background on hover */
+}
+
+/* Image container styling */
+.image-container {
+  /* Limit image width */
+  margin-right: 10px;
+}
+
+/* Image styling */
+.image {
+  width: 250px; /* Make image responsive */
+  height: auto;
+  border-radius: 10px; /* Optional: Rounded corners for the image */
+
+}
+@media (min-width:571px) and (max-width:770px){
+  .content{
+    margin-left: -5px;
+  }
+}
+
+@media (min-width:437px) and (max-width:570px){
+  .button{
+    margin-bottom: 20px;
+  }
+  .content{
+    margin-left: -5px;
+  }
+  .content h1{
+    font-size: 1.7rem;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .image{
+    width: 200px;
+  }
+  .image-container{
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width:436px){
+  .content h1{
+    font-size: 1.5rem;
+  }
+  .content{
+    margin-left: -20px;
+  }
+  .image{
+    width: 190px;
+  }
+  .image-container{
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+}

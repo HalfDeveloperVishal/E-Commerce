@@ -1,0 +1,12 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding-top: 65px; /* Adjust 70px to match your navbar's height */
+}
+
+/* Or, if you have a main content wrapper: */
+.main-content {
+  padding-top: 70px; /* Adjust 70px to match your navbar's height */
+}

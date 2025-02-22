@@ -1,0 +1,592 @@
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+/* Ensure the rest of the page is not hidden under the navbar */
+body {
+  margin-top: 70px; /* Adjust based on your navbar height */
+}
+
+
+/* Left Section - Logo & Company Name */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.company-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Middle Section - Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-top: 10px;
+  gap: 30px;
+  
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.nav-links li:hover {
+  text-decoration: underline;
+}
+
+/* Right Section - Search Bar & Icons */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+  /* gap: 20px; */
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+  width: 40vh;
+
+}
+
+.search-bar-section{
+    padding-right: 50px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.search-icon {
+  color: #013d27;
+}
+
+/* Icons for Account & Cart */
+.icon-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* margin-top: 10px; */
+  }
+
+.account-icon,.user-icon,.account,.user {
+  /* font-size: 24px; */
+  cursor: pointer;
+
+}
+
+.icon:hover {
+  color: #ffcc00;
+}
+
+.account {
+  display: flex;
+  gap: 5px;
+}
+
+.user{
+    display: flex;
+    gap: 5px;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+.account p,.user p{
+    font-size: 13px;
+}
+
+.account:hover{
+    text-decoration: underline;
+}
+
+.user:hover{
+    text-decoration: underline;
+}
+
+.btn-group{
+  background-color: white !important;
+  border: 1px solid black !important;
+}
+
+.btn-group:hover{
+  background-color: #007bff !important;
+  border: none!important;
+}
+
+
+
+.hamburger-icon{
+  font-size: 20px;
+  background: none;
+  display: none;
+}
+
+.sidebar {
+  width: 180px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -280px; /* Hide sidebar by default */
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.fs-4{
+  margin-left: 15px;
+}
+
+.nav-link{
+  margin-top: 10px;
+}
+
+.sidebar.active {
+  left: 0; /* Show sidebar when active */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Overlay for better UX */
+.sidebar.active + .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Style for the sidebar links */
+.sidebar .nav-link {
+  color: white;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect */
+.sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+}
+
+/* Active (clicked) effect */
+.sidebar .nav-link:active,
+.sidebar .nav-link:focus {
+  background-color: blue; /* Slightly darker background on click */
+}
+
+.hamburger-icon{
+  display: none;
+}
+
+/* Sidebar Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Signup Modal */
+.signup-modal {
+  height: 510px;
+  position: fixed;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  width: 300px;
+  text-align: center;
+}
+
+.signup-content h2 {
+  margin-bottom: 10px;
+}
+
+.terms-checkbox{
+  padding-right: 100px;
+}
+
+.signup-content input {
+  width: 100%;
+  padding: 7px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-content button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Close button */
+.signup-content .close-btn {
+  position: absolute;
+  top: -15px;
+  left: 130px;
+  background: transparent;
+  color: black;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Welcome Message */
+.welcome-message-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 2.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    top: 10px;
+  }
+  to {
+    opacity: 1;
+    top: 20px;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    top: 20px;
+  }
+  to {
+    opacity: 0;
+    top: 10px;
+  }
+}
+
+/* Terms & Conditions Checkbox */
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.terms-text{
+  margin-right: 90px;
+  font-size: 13px;
+}
+/* Sign-In & Forgot Password */
+.signup-options {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.signup-options a {
+  color: blue;
+  text-decoration: none;
+}
+.signup-options a:hover {
+  text-decoration: underline;
+}
+
+.login-modal {
+  height: 410px;
+  position: fixed;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  width: 300px;
+  text-align: center;
+}
+
+.login-content{
+  padding-top: 10px;
+}
+
+.login-content h2 {
+  margin-bottom: 10px;
+}
+
+.terms-checkbox-login{
+  align-items: center;
+  padding-right: 100px;
+  padding-bottom: 10px;
+}
+
+.login-content input {
+  width: 100%;
+  padding: 7px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-content button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Close button */
+.login-content .close-btn {
+  position: absolute;
+  top: -15px;
+  left: 130px;
+  background: transparent;
+  color: black;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Welcome Message */
+.welcome-message-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s ease-in-out 2.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    top: 10px;
+  }
+  to {
+    opacity: 1;
+    top: 20px;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    top: 20px;
+  }
+  to {
+    opacity: 0;
+    top: 10px;
+  }
+}
+
+/* Terms & Conditions Checkbox */
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.terms-text{
+  margin-right: 90px;
+  font-size: 13px;
+}
+/* Sign-In & Forgot Password */
+.signup-options {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.signup-options a {
+  color: blue;
+  text-decoration: none;
+}
+.signup-options a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links{
+    display: none;
+  }
+  .company-name{
+    display: none;
+  }
+  .search-bar{
+    width:220px;
+    /* margin-right: 10px; */
+    margin-left: -40px;
+  }
+  .account{
+    display: none;
+  }
+  .hamburger-icon{
+    display: block;
+    margin-right: 40px;
+  }
+  .logo{
+    display: none;
+  }
+  .user{
+    margin-right: 5px;
+    margin-left: -20px;
+    font-size: 20px;
+  }
+  .user p{
+    font-size: 14px;
+    padding-top: 1px;
+  }
+  .btn-group{
+    display: none !important;
+  }
+  
+}
+
+@media(min-width:1141px)and (max-width: 1222px){
+  .search-bar{
+    width: 350px;
+  }
+  .nav-links{
+    margin-left: -30px;
+  }
+}
+
+
+@media(min-width:1075px)and (max-width: 1140px){
+  .nav-links{
+    display: none;
+  }
+  .hamburger-icon{
+    display: block;
+  }
+
+}
+
+@media (min-width:898px)and (max-width: 1076px){
+  .nav-links{
+    display: none;
+  }
+  .hamburger-icon{
+    display: block;
+    margin-right: 40px;
+  }
+  .btn-group{
+    display: none !important;
+  }
+}
+@media (min-width:570px)and (max-width: 900px){
+  .company-name{
+    display: none;
+  }
+  .nav-links{
+    display: none;
+  }
+  
+  .hamburger-icon{
+    display: block;
+    margin-right: 40px;
+  }
+
+  .search-bar{
+    width: 390px;
+  }
+  .btn-group{
+    display: none !important;
+  }
+}
+
+@media  (min-width:540px)and(max-width:571px){
+  .search-bar{
+    width: 390px;
+  }
+  .btn-group{
+    display: none !important;
+  }
+}
