@@ -16,32 +16,39 @@ export const CartProvider = ({ children }) => {
   }, [loggedInUser]);
 
   // Function to add an item to the cart with quantity update
-  const addToCart = (product, isQuantityUpdate = false) => {
-    if (!loggedInUser) {
-      alert("Please log in to add items to your cart.");
-      return;
-    }
-
-    let updatedCart = [...cart];
-    const existingProductIndex = updatedCart.findIndex((item) => item.name === product.name);
-
-    if (existingProductIndex !== -1) {
-      // If product exists, update the quantity
-      if (isQuantityUpdate) {
-        updatedCart[existingProductIndex].quantity += product.quantity; // Add new quantity to existing one
+  const addToCart = (product, selectedQuantity = 1) => {
+    setCart((prevCart) => {
+      // Check if product already exists in the cart
+      const existingProduct = prevCart.find((item) => item.name === product.name);
+  
+      if (existingProduct) {
+        // Increase quantity by selected amount
+        return prevCart.map((item) =>
+          item.name === product.name
+            ? { ...item, quantity: item.quantity + selectedQuantity } // Increase by selectedQuantity
+            : item
+        );
       } else {
-        updatedCart[existingProductIndex].quantity = product.quantity; // Set new quantity
+        // Add new product with selected quantity
+        return [...prevCart, { ...product, quantity: selectedQuantity }];
       }
-    } else {
-      // If the product is new, add it to the cart
-      updatedCart.push({ ...product, quantity: product.quantity || 1 });
-    }
-
-    setCart(updatedCart);
-    if (loggedInUser?.email) {
+    });
+  
+    // Persist the cart data in local storage
+    if (loggedInUser && loggedInUser.email) {
+      const updatedCart = JSON.parse(localStorage.getItem(`cart_${loggedInUser.email}`)) || [];
+      const productExists = updatedCart.find((item) => item.name === product.name);
+  
+      if (productExists) {
+        productExists.quantity += selectedQuantity;
+      } else {
+        updatedCart.push({ ...product, quantity: selectedQuantity });
+      }
+  
       localStorage.setItem(`cart_${loggedInUser.email}`, JSON.stringify(updatedCart));
     }
   };
+  
 
   const decreaseQuantity = (product) => {
     let updatedCart = [...cart];

@@ -17,7 +17,7 @@ const ProductDescription = () => {
 
   const productImages = images || [image]; // Use provided images or fallback to main image
   const [mainImage, setMainImage] = useState(productImages[0]);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1); // State for selected quantity
 
   if (!name) {
     return <h2>Product not found</h2>;
@@ -30,12 +30,12 @@ const ProductDescription = () => {
   };
 
   const handleAddToCart = () => {
-    addToCart({ image, name, price, description, rating, quantity }, true);
+    addToCart({ image, name, price, description, rating }, quantity); // Pass correct quantity
     alert(`${quantity} ${name}(s) added to cart!`);
   };
 
   const handleBuyNow = () => {
-    addToCart({ image, name, price, description, rating, quantity });
+    addToCart({ image, name, price, description, rating }, quantity);
     navigate("/cart");
   };
 
